@@ -1,4 +1,4 @@
-FROM vllm/vllm-openai:v0.6.1
+FROM public.ecr.aws/aws-gcr-solutions/medical-insight/vllm/vllm-openai:v0.6.1
 
 # Install required packages
 RUN pip install git+https://github.com/huggingface/transformers@21fac7abba2a37fae86106f87fcf9974fd1e3830
