@@ -22,7 +22,7 @@ model_id = os.environ.get('HF_MODEL_ID', "Qwen/Qwen2-VL-7B-Instruct")
 dtype = os.environ.get('OPTION_DTYPE', "half")
 max_model_len = int(os.environ.get('OPTION_MAX_MODEL_LEN', 8192))
 gpu_memory_utilization = os.environ.get('OPTION_GPU_MEMORY_UTILIZATION', 0.95)
-enfore_eager = os.environ.get('OPTION_GPU_MEMORY_UTILIZATION', False)
+enforce_eager = eval(os.environ.get('OPTION_ENFORCE_EAGER', "False"))
 
 
 # Initialize the model
@@ -30,13 +30,13 @@ def get_model():
     llm_model = LLM(
         model=model_id,
         limit_mm_per_prompt={
-            "image": 5, 
-            "video": 2
+            "image": 2, 
+            "video": 1
         },
         dtype=dtype,
         gpu_memory_utilization=gpu_memory_utilization,
         max_model_len=max_model_len,
-        enfore_eager=enfore_eager
+        enforce_eager=enforce_eager
     )
 
     processor = AutoProcessor.from_pretrained(
