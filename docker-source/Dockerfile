@@ -5,6 +5,7 @@ RUN pip install git+https://github.com/huggingface/transformers@21fac7abba2a37fa
 RUN pip install sagemaker==2.231.0
 RUN pip install qwen-vl-utils
 RUN pip install qwen-vl-utils[decord]
+RUN pip install requests==2.32.2
 
 
 # Copy the inference script to /app
