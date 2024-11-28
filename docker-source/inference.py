@@ -30,7 +30,7 @@ def get_model():
     llm_model = LLM(
         model=model_id,
         limit_mm_per_prompt={
-            "image": 2, 
+            "image": 12, 
             "video": 1
         },
         dtype=dtype,
@@ -65,7 +65,7 @@ async def generate_text(request: Request) -> JSONResponse:
 
     try:
         request_dict = await request.json()
-        logger.error(f"Received messages: {request_dict}, type: {type(request_dict)}")
+        # logger.error(f"Received messages: {request_dict}, type: {type(request_dict)}")
         
         messages = request_dict.pop("messages")
         if "properties" in request_dict.keys():
