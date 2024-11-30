@@ -103,7 +103,7 @@ async def generate_text(request: Request) -> JSONResponse:
         outputs = predictor.generate([llm_inputs], sampling_params=sampling_params)
         generated_text = outputs[0].outputs[0].text
         
-        ret = {"text": generated_text, "prompt": prompt}
+        ret = {"text": generated_text}
 
         logger.error(f"outputs: {ret}")
     
