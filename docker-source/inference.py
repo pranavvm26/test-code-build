@@ -30,7 +30,7 @@ def get_model():
     llm_model = LLM(
         model=model_id,
         limit_mm_per_prompt={
-            "image": 8, 
+            "image": 5, 
             "video": 1
         },
         dtype=dtype,
