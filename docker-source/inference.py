@@ -20,7 +20,7 @@ logger = logging.getLogger("foo")
 # Environment variables
 model_id = os.environ.get('HF_MODEL_ID', "Qwen/Qwen2-VL-7B-Instruct")
 dtype = os.environ.get('OPTION_DTYPE', "half")
-max_model_len = int(os.environ.get('OPTION_MAX_MODEL_LEN', 8192))
+max_model_len = int(os.environ.get('OPTION_MAX_MODEL_LEN', 18000))
 gpu_memory_utilization = os.environ.get('OPTION_GPU_MEMORY_UTILIZATION', 0.95)
 enforce_eager = eval(os.environ.get('OPTION_ENFORCE_EAGER', "False"))
 
